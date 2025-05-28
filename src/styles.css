@@ -1,1 +1,139 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* SOLUTION 1: Add to global styles.css (Recommended) */
+/* This will apply the pattern to the entire page */
+
+body {
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 35px,
+    rgba(255,255,255,.1) 35px,
+    rgba(255,255,255,.1) 70px
+  );
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* SOLUTION 2: Apply to app-root (Alternative) */
+app-root {
+  position: relative;
+  min-height: 100vh;
+}
+
+app-root::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 35px,
+    rgba(255,255,255,.1) 35px,
+    rgba(255,255,255,.1) 70px
+  );
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* SOLUTION 3: Utility class for selective application */
+.global-pattern {
+  position: relative;
+}
+
+.global-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 35px,
+    rgba(255,255,255,.1) 35px,
+    rgba(255,255,255,.1) 70px
+  );
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* SOLUTION 4: Section-specific pattern */
+.section-with-pattern {
+  position: relative;
+}
+
+.section-with-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 35px,
+    rgba(255,255,255,.1) 35px,
+    rgba(255,255,255,.1) 70px
+  );
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content appears above pattern */
+.section-with-pattern > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* SOLUTION 5: For dark backgrounds specifically */
+.dark-section-pattern {
+  position: relative;
+  background: linear-gradient(135deg, #1e293b 0%, #1e40af 50%, #1e293b 100%);
+}
+
+.dark-section-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 35px,
+    rgba(255,255,255,.08) 35px,
+    rgba(255,255,255,.08) 70px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark-section-pattern > * {
+  position: relative;
+  z-index: 1;
+}

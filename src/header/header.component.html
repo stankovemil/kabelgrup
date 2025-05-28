@@ -1,0 +1,51 @@
+<nav class="fixed w-full top-0 z-50 backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+<!--        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">-->
+<!--          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">-->
+<!--            <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>-->
+<!--          </svg>-->
+<!--        </div>-->
+        <div class="flex flex-row items-center ">
+          <img src="logo.png" class="h-16 w-26">
+          <div class="flex flex-col">
+            <span class="text-xl font-bold text-white tech-font tracking-wide">КАБЕЛ ГРУП</span>
+<!--            <span class="text-xs text-white/70 font-light -mt-1 tracking-wide">Подружница на МЗТ Алуметал - Скопје</span>-->
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="https://www.ttcables.com/hr/kategorija-proizvoda/tip/" target="_blank" class="text-white/90 hover:text-white font-medium transition-colors tracking-widest uppercase text-sm tech-font" routerLinkActive="text-white">ПРОДУКТИ</a>
+        <a href="https://www.ttcables.com/hr/reference/" target="_blank" class="text-white/90 hover:text-white font-medium transition-colors tracking-widest uppercase text-sm tech-font" routerLinkActive="text-white">ПРОЕКТИ</a>
+        <a href="https://www.ttcables.com/hr/our-certificates/" class="text-white/90 hover:text-white font-medium transition-colors tracking-widest uppercase text-sm tech-font" routerLinkActive="text-white">СЕРТИФИКАТИ</a>
+        <a href="#contact" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-2 rounded-lg border border-white/30 hover:border-white/50 transition-all font-medium uppercase tracking-wider tech-font text-sm">
+          КОНТАКТ
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button (click)="toggleMobileMenu()" class="text-white/90 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div *ngIf="isMobileMenuOpen" class="md:hidden bg-slate-900/95 backdrop-blur-sm rounded-lg mt-2 p-4">
+      <div class="flex flex-col space-y-4">
+        <a href="https://www.ttcables.com/hr/kategorija-proizvoda/tip/" target="_blank" class="text-white/90 hover:text-white font-medium transition-colors tracking-widest uppercase text-sm tech-font">ПРОДУКТИ</a>
+        <a href="https://www.ttcables.com/hr/reference/" target="_blank" class="text-white/90 hover:text-white font-medium transition-colors tracking-widest uppercase text-sm tech-font">ПРОЕКТИ</a>
+        <a href="https://www.ttcables.com/hr/our-certificates/" target="_blank" class="text-white/90 hover:text-white font-medium transition-colors tracking-widest uppercase text-sm tech-font">СЕРТИФИКАТИ</a>
+        <a href="#contact" (click)="toggleMobileMenu()" class="text-white/90 hover:text-white font-medium transition-colors tracking-widest uppercase text-sm tech-font">КОНТАКТ</a>
+
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,13 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@200;300;400;500;600;700&display=swap');
-
-:host {
-  font-family: 'Exo 2', sans-serif;
-}
-
 .tech-font {
   font-family: 'Orbitron', monospace;
 }
-
 
 .bg-pattern {
   background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
